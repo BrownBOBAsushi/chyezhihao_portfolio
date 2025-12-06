@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Sparkles, ChevronDown, GraduationCap, Briefcase, Trophy, LineChart, Medal, Zap } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Sparkles, ChevronDown, GraduationCap, Briefcase, Trophy, LineChart, Medal, Zap, FileDown } from 'lucide-react';
 import profileImage from './assets/personal-image.jpg';
 
 const App = () => {
@@ -66,12 +66,28 @@ const App = () => {
               I craft intelligent digital systems using <span className="font-semibold text-slate-800">Python AI agents</span> and <span className="font-semibold text-slate-800">React</span>.
             </p>
             
-            <div className="flex flex-col md:flex-row gap-4 justify-center pt-8">
-              <a href="#projects" className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 hover:scale-105 transition-all shadow-xl shadow-slate-200">
+            {/* BUTTON GROUP (Now with 3 buttons) */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 items-center">
+              
+              {/* 1. Primary Button */}
+              <a href="#projects" className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 hover:scale-105 transition-all shadow-xl shadow-slate-200 flex items-center justify-center gap-2">
                 View My Work
               </a>
-              <a href="#contact" className="px-8 py-4 bg-white/50 backdrop-blur-sm border border-white text-slate-900 rounded-full font-bold hover:bg-white transition-all shadow-sm">
+              
+              {/* 2. Secondary Button (Contact) */}
+              <a href="#contact" className="w-full sm:w-auto px-8 py-4 bg-white/50 backdrop-blur-sm border border-white text-slate-900 rounded-full font-bold hover:bg-white transition-all shadow-sm flex items-center justify-center gap-2">
                 Contact Me
+              </a>
+
+              {/* 3. NEW: Resume Button (Outlined with Icon) */}
+              <a 
+                href="/ChyeZhiHao_Resume.pdf"  // <-- IMPORTANT: Path to your resume file
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-full font-bold hover:bg-slate-900 hover:text-white transition-all shadow-sm flex items-center justify-center gap-2 group"
+              >
+                <FileDown size={20} className="group-hover:animate-bounce" />
+                Download CV
               </a>
             </div>
           </div>
